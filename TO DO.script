@@ -1,0 +1,55 @@
+// Function to add a new task
+
+functionaddTask() {
+
+const input = document.getElementById('taskInput');
+
+consttaskText = input.value.trim();
+
+if (taskText === '') {
+
+alert('Please enter a task.');
+
+return;
+
+ }
+
+consttaskList = document.getElementById('taskList');
+
+const li = document.createElement('li');
+
+li.innerHTML = `
+
+<span>${taskText}</span>
+
+<button onclick="completeTask(this)">Complete</button>
+
+<button onclick="deleteTask(this)">Delete</button>
+
+ `;
+
+taskList.appendChild(li);
+
+input.value = '';
+
+}
+
+// Function to complete a task
+
+functioncompleteTask(button) {
+
+const li = button.parentElement;
+
+li.classList.toggle('completed');
+
+}
+
+// Function to delete a task
+
+functiondeleteTask(button) {
+
+const li = button.parentElement;
+
+li.remove();
+
+}
